@@ -10,6 +10,7 @@ class ReceiveWindow : public QMainWindow {
 
 public:
     ReceiveWindow(QWidget *parent = nullptr);
+    QByteArray bittobyte (const QBitArray &sendBit);
 
 public slots:
     void receiveImage(const QBitArray &sendBit);
@@ -17,6 +18,7 @@ public slots:
 
 protected:
     void paintEvent(QPaintEvent *event) override;
+    void deserializeImage(const QByteArray &receiveByte);
 
 private:
     QImage receivedImage;
