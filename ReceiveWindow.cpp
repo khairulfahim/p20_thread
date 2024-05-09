@@ -31,7 +31,7 @@ void ReceiveWindow::receiveImage(const QBitArray &sendBit) {
 
 void ReceiveWindow::receiveClear() {
     // Clear the received image
-    receivedImage = QImage();
+    receivedImage = QImage(receivedImage.size(), receivedImage.format());
     receivedImage.fill(Qt::white);
     update();
 }
